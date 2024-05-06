@@ -49,13 +49,13 @@ class Server:
         """
         data = self.indexed_dataset()
         assert index is not None and index >= 0 and index <= max(data.keys())
-        page_dat = []
+        page_data = []
         data_count = 0
         next_index = None
         start = index if index else 0
         for i, item in data.items():
             if i >= start and data_count < page_size:
-                page_dat.append(item)
+                page_data.append(item)
                 data_count += 1
                 continue
             if data_count == page_size:
@@ -64,7 +64,7 @@ class Server:
         page_info = {
             'index': index,
             'next_index': next_index,
-            'page_size': len(page_dat),
-            'data': page_dat,
+            'page_size': len(page_data),
+            'data': page_data,
         }
         return page_info
