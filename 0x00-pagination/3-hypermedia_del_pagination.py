@@ -64,7 +64,7 @@ class Server:
         page_info = {
             'index': index,
             'next_index': next_index,
-            'page_size': len(page_data),
-            'data': page_data,
+            'page_size': len(page_dat),
+            'data': page_dat,
         }
         return page_info
